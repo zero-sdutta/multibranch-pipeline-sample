@@ -1,0 +1,21 @@
+kind: Pod
+metadata:
+  name: kaniko
+spec:
+  serviceAccountName: cbci-perf-testing-infra 
+  containers:
+  - name: jnlp
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:debug
+    imagePullPolicy: Always
+    command:
+    - sleep
+    args:
+    - 999999
+    resources:
+      requests:
+        cpu: 1
+        memory: 4Gi
+      limits:
+        cpu: 1
+        memory: 4Gi

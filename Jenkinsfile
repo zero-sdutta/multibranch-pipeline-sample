@@ -1,5 +1,11 @@
 pipeline {
-  agent any
+  agent {
+	kubernetes {
+            label 'test'
+	    yamlFile "podTemplates/kaniko_cbci.yaml"
+            }
+        }
+  }
   options {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
   }
