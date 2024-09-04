@@ -1,7 +1,6 @@
 pipeline {
   agent {
 	kubernetes {
-            label 'test'
 	    yamlFile "podTemplates/kaniko_cbci.yaml"
             }
         }
