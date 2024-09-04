@@ -2,7 +2,6 @@ kind: Pod
 metadata:
   name: kaniko
 spec:
-  serviceAccountName: cloudbees-jaas-perf-test
   containers:
   - name: jnlp
   - name: kaniko
