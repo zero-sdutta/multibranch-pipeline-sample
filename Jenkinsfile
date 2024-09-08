@@ -1,4 +1,4 @@
-parallel([0, 1, 2, 3, 4, $parallel].collectEntries {b -> ["perfBranch-$b", {
+parallel([0, 1, 2, 3, 4, $parallel, 5].collectEntries {b -> ["perfBranch-$b", {
           podTemplate(cloud: 'kubernetes',yaml: '''
 apiVersion: v1
 kind: Pod
