@@ -17,13 +17,10 @@ spec:
 retry(count: 2, conditions: [kubernetesAgent(), nonresumable()]) {
               node(POD_LABEL) {
                 stage("build-$b") {
-                    withMockLoad(averageDuration: 120) {
-                    sh 'eval $MOCK_LOAD_COMMAND || echo "Failed: $?"'
-                  }
+                  javac src/main/java/mock/MockLoad.java
                 }
-                stage("publish-$b") {
-                  junit 'mock-junit.xml'
-                  archiveArtifacts artifacts: 'mock-artifact-*.txt', allowEmptyArchive: true, fingerprint: true
+                stage("run-$b") {
+                  java src/main/java/mock/MockLoad.class
                 }
               }
             }
