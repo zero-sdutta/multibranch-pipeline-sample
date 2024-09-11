@@ -17,10 +17,10 @@ spec:
 retry(count: 2, conditions: [kubernetesAgent(), nonresumable()]) {
               node(POD_LABEL) {
                 stage("build-$b") {
-                  javac MockLoad.java
+                  sh "javac MockLoad.java"
                 }
                 stage("execute-$b") {
-                  java MockLoad
+                  sh "java MockLoad"
                 }
               }
             }
