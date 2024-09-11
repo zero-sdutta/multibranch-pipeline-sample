@@ -16,11 +16,11 @@ spec:
 ''') {
 retry(count: 2, conditions: [kubernetesAgent(), nonresumable()]) {
               node(POD_LABEL) {
-                stage("build-$b") {
-                  sh "javac MockLoad.java"
+                stage("retrieve-$b") {
+                  sh "curl -o mock-load-builder.jar https://repo.jenkins-ci.org/artifactory/releases/org/jenkins-ci/plugins/mock-load-builder/105.v1fc7e407a_0b_1/mock-load-builder-105.v1fc7e407a_0b_1.jar"
                 }
-                stage("execute-$b") {
-                  sh "java MockLoad"
+                stage("run-$b") {
+                  sh "java -cp mock-load-builder.jar mock.MockLoad"
                 }
               }
             }
