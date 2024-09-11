@@ -19,7 +19,7 @@ retry(count: 2, conditions: [kubernetesAgent(), nonresumable()]) {
                 stage("build-$b") {
                   javac MockLoad.java
                 }
-                stage("run-$b") {
+                stage("execute-$b") {
                   java MockLoad
                 }
               }
