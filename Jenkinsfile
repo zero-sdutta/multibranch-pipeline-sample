@@ -17,7 +17,7 @@ spec:
 retry(count: 2, conditions: [kubernetesAgent(), nonresumable()]) {
               node(POD_LABEL) {
                 stage("run-$b") {
-                  sh "java -cp mock-load-builder.jar mock.MockLoad <480>"
+                  sh "java -cp mock-load-builder.jar mock.MockLoad 480"
                 }
 		stage("publish-$b"){
 		  junit 'mock-junit.xml'
