@@ -25,4 +25,5 @@ retry(count: 2, conditions: [kubernetesAgent(), nonresumable()]) {
               }
             }
 	  }
+	}
         }]})
