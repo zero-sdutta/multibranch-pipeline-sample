@@ -11,9 +11,9 @@ do
   git add JenkinsFile
   git commit -m "new branch commit with incremental parallel jobs"
   git push --set-upstream origin perf-test-$b
-  b=$(($b+1))
 # commit frequency is calculated based on the time interval i.e. sleep
   sleep 30
   echo $b >> ~/JaaS/iteration-output.txt
+  b=$(($b+1))
 
 done
