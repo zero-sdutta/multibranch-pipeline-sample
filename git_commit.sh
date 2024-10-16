@@ -1,6 +1,7 @@
 #!/bin/bash
 
 b=1
+date
 while [ $b != 0 ]
 do
 
@@ -13,5 +14,6 @@ do
   b=$(($b+1))
 # commit frequency is calculated based on the time interval i.e. sleep
   sleep 30
+  echo $b >> ~/JaaS/iteration-output.txt
 
 done
