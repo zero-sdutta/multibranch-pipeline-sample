@@ -12,6 +12,7 @@ spec:
         cpu: '256m'
         memory: '640Mi'
       limits:
+        cpu: '256m'
         memory: '640Mi'
 ''') {
 retry(count: 2, conditions: [kubernetesAgent(), nonresumable()]) {
