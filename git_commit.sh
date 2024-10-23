@@ -14,7 +14,7 @@ do
 # commit frequency is calculated based on the time interval i.e. sleep
   sleep 10
   echo $b >> ~/JaaS/iteration-output.txt
-  b=$(($b+2))
+  b=$(($b+1))
 
 done
 date
