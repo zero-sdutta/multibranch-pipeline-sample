@@ -6,10 +6,10 @@ while [ $b != 0 ]
 do
 
   git checkout -b perf-test-$b
-  git push --set-upstream origin perf-test-$b
   parallel=$(($b+4))
   awk -v p=$parallel 'BEGIN {FS="]"; OFS="";} NR==1 {$1=$1", "p"]"} {print $0}' JenkinsFile | tee JenkinsFile
-  git add JenkinsFile
+  git status
+  git add .
   git status
   git commit -m "new branch commit with incremental parallel jobs"
   git push origin perf-test-$b
