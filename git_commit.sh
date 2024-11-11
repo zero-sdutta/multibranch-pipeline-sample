@@ -21,9 +21,8 @@ do
                 	git branch -D perf-test-$b
                 	git checkout -b perf-test-$b
 			git status
-                	awk -v p=$parallel 'BEGIN {FS="]"; OFS="";} NR==1 {$1=$1", "p"]"} {print $0}' Jenkinsfile >Jenkinsfile
+			awk -v p=$parallel 'BEGIN {FS="]"; OFS="";} NR==1 {$1=$1", "p"]"} {print $0}' Jenkinsfile | tee Jenkinsfile
 			git status
-			cat Jenkinsfile
         	fi
 	done
   git status
