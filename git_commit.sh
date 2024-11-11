@@ -30,8 +30,8 @@ do
   git commit -m "new branch commit with incremental parallel jobs"
   git push origin perf-test-$b
 # commit frequency is calculated based on the time interval i.e. sleep
-  sleep 6
-  echo $b >> ~/JaaS/iteration-output-test1.txt
+  sleep 30
+  echo $b >> ~/JaaS/iteration-output-2cf.txt
   b=$(($b+1))
 
 done
