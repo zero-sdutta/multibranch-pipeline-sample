@@ -20,8 +20,10 @@ do
                 	git checkout perf-test-$(($b-1))
                 	git branch -D perf-test-$b
                 	git checkout -b perf-test-$b
+			git status
                 	awk -v p=$parallel 'BEGIN {FS="]"; OFS="";} NR==1 {$1=$1", "p"]"} {print $0}' Jenkinsfile >Jenkinsfile
-			cat JenkinsFile
+			git status
+			cat Jenkinsfile
         	fi
 	done
   git status
