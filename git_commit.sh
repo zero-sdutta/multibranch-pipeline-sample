@@ -35,6 +35,4 @@ do
   echo $b >> ~/JaaS/iteration-output-6cf.txt
   b=$(($b+1))
 
-done
-date
-~    
+done    
