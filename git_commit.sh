@@ -32,7 +32,7 @@ do
   git push origin perf-test-$b
 # commit frequency is calculated based on the time interval i.e. sleep
   sleep 30
-  echo $b >> ~/JaaS/iteration-output-5cf-300MLF-foo-foo-00.txt
+  echo $b >> ~/JaaS/iteration-output-5cf-300MLF-foo-foo-000.txt
   b=$(($b+1))
 
 done    
